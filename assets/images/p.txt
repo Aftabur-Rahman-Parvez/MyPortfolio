@@ -1,0 +1,125 @@
+import { Component, OnInit } from '@angular/core';
+import { Products } from 'src/app/modals/products.modals';
+import { ProductsService } from 'src/app/services/products.service';
+
+@Component({
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
+})
+export class ProductComponent implements OnInit {
+
+  productList:Products[]=[];
+  tempList:Products[]=[];
+  shortingList:Products[]=[];
+
+  
+  templist: Products[] = [];
+  productBrands;
+  
+  showColor = false;
+  showSize = false;
+  catlist = [];
+  colorList;
+  sizeList;
+
+  checklist = [];
+  colorchecklist = [];
+  sizechecklist = [];
+
+  constructor(private pservice:ProductsService) { }
+
+  ngOnInit(): void {
+    this.showproducts();
+    console.log(this.tempList);
+    console.log(this.productList);
+
+    const data=this.pservice.getAllData().subscribe(res=>{
+      // console.log(res);
+      for(let key in res){
+        let obj:Products={
+          $key:key,
+          name:res[key].name,
+          category:res[key].category,
+          img:res[key].img,
+          quantity:res[key].quantity,
+          price:res[key].price,
+          size:res[key].size,
+          brand:res[key].brand,
+          color:res[key].color,
+          date:res[key].date,
+        };
+
+        this.productList.push(obj);
+        
+        
+      }
+    })
+  }
+
+  showproducts(){
+    const data=this.pservice.getAllData().subscribe(res=>{
+      // console.log(res);
+      for(let key in res){
+        let obj:Products={
+          $key:key,
+          name:res[key].name,
+          category:res[key].category,
+          img:res[key].img,
+          quantity:res[key].quantity,
+          price:res[key].price,
+          size:res[key].size,
+          brand:res[key].brand,
+          color:res[key].color,
+          date:res[key].date,
+        };
+
+     
+        this.tempList.push(obj);
+        
+      }
+    })
+  }
+
+  category(e){
+    console.log(e);
+    console.log(e.target.value);
+    let filter=e.target.value.toLowerCase();
+    let brands=[];
+    let size=[];
+    let color=[];
+
+    let temp=this.tempList.filter(function(item){
+      if(item.category.toLowerCase() == filter){
+        return 1;
+      }
+    });
+
+    temp.forEach(item=>{
+      if(brands.indexOf(item.brand)== -1){
+        brands.push(item.brand);
+      }
+      if (color.indexOf(item.color) == -1) {
+        color.push(item.color)
+      }
+      if (size.indexOf(item.size) == -1) {
+        size.push(item.size)
+      }
+      if (brands.indexOf(item.brand) == -1) {
+        brands.push(item.brand);
+      }
+    });
+
+    
+
+    this.productList = temp;
+    this.catlist = temp;
+    this.checklist = [];
+    this.productBrands = brands;
+    this.colorList = color;
+    this.sizeList = size;
+    
+
+  }
+
+}
