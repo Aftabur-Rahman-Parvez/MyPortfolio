@@ -9,6 +9,28 @@
     .banner_part {
         height: auto;
     }
+    .banner_content {
+        padding-top: 10px;
+    }
+    .personal-content {
+        margin-top: 50px;
+    }
+    .contact_icon {
+        margin-bottom: 25px;
+    }
+    .header .navbar-toggler {
+        color: #2db89d;
+        font-size: 30px;
+    }
+    .banner_item h1 {
+        font-size: 28px;
+    }
+    .banner_item h4 {
+        font-size: 26px;
+    }
+    .personal-content h3 {
+        font-size: 23px;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -21,6 +43,28 @@
     }
     .banner_part {
         height: auto;
+    }
+    .banner_content {
+        padding-top: 10px;
+    }
+    .personal-content {
+        margin-top: 50px;
+    }
+    .contact_icon {
+        margin-bottom: 25px;
+    }
+    .header .navbar-toggler {
+        color: #2db89d;
+        font-size: 30px;
+    }
+    .banner_item h1 {
+        font-size: 28px;
+    }
+    .banner_item h4 {
+        font-size: 26px;
+    }
+    .personal-content h3 {
+        font-size: 23px;
     }
 }
 
