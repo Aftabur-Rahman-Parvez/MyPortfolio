@@ -18,44 +18,6 @@ $(document).ready(function(){
     $(this).addClass('active');
   })
 
-  // our product carosuel 
-  jQuery("#carousel_client").owlCarousel({
-    nav: false,
-    autoplay: false,
-    dots: true,
-    lazyLoad: true,
-    loop: true,
-    margin: 20,
-     /*
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    */
-    responsiveClass: true,
-    autoHeight: true,
-    autoplayTimeout: 7000,
-    smartSpeed: 800,
-    // nav: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-  
-      600: {
-        items: 1
-      },
-  
-      1024: {
-        items: 2
-      },
-  
-      1366: {
-        items: 2
-        
-	      
-      }
-    },
-    navText: ['<span class="fas fa-chevron-left fa-2x"></span>','<span class="fas fa-chevron-right fa-2x"></span>'],
-  });
 
   // $("#menu > li a").on("click" , function () {
   //   $("#main > section.active, #menu > li a").removeClass("active");
