@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, .h1 {
     padding-top: 30px;
 }
 .banner_item h1{
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     font-size: 35px;
 }
 .banner_item h4{
@@ -79,6 +79,11 @@ h1, h2, h3, h4, h5, h6, .h1 {
 }
 .person_img img{
     border-radius: 50%;
+}
+.banner_item h3{
+    font-size: 20px;
+    color:#5a5a5d;
+    margin-bottom: 30px;
 }
 
 
@@ -148,6 +153,10 @@ h1, h2, h3, h4, h5, h6, .h1 {
 }
 .personal_content_btn .common_btn a{
     color:#fff;
+}
+.about_text p{}
+.about_text p span{
+    font-weight: 600;
 }
 
 /* skill */
