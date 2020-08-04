@@ -1,8 +1,14 @@
 var $window = $(window);
 var $root = $('html, body');
 
+$(function(){
+	// Animate with Scroll
+	new WOW().init();
+});
 
 $(document).ready(function(){
+
+   
 
   // $('.header .navbar-nav a').on('click', function(event) {
   //   var $anchor = $(this);
@@ -12,6 +18,8 @@ $(document).ready(function(){
   //   event.preventDefault();
   //   $(".navbar-collapse").collapse('hide');
   // });
+
+ 
 
   $('.main_menu_ul .nav-item .nav-link').click(function(){
     $('.main_menu_ul .nav-item .nav-link').removeClass('active');
@@ -46,8 +54,10 @@ $window.on('scroll', function () {
  
     if ($window.scrollTop() > 100) {
         $('#header').addClass('header-sticky');
+      
     } else {
         $('#header').removeClass('header-sticky');
+        
     }
   
 });
